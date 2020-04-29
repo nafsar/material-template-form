@@ -1,1 +1,24 @@
-<p>template-form works!</p>
+<div class="example-container basic-align">
+    <mat-card>
+        <mat-form-field appearance="fill" >
+            <mat-label>Name</mat-label>
+            <input matInput required minlength="4" >
+            <div>
+             Please enter a name (A-Z)
+            </div>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select>
+                <mat-option value="option">Option</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput></textarea>
+            <!-- <button type="submit" class="button" [disabled]="!templateForm.form.valid">Submit</button> -->
+        </mat-form-field>
+    </mat-card>
+</div>
