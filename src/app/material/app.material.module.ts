@@ -41,6 +41,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+/* import {MatCheckboxModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';  */
 
 @NgModule({
   exports: [
