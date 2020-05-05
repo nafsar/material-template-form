@@ -31,6 +31,9 @@ export class TemplateFormComponent implements OnInit {
     this.submitted = true;
   }
 
+  refresh(): void {
+    window.location.reload();
+  }
   constructor() { }
 
   ngOnInit(): void {
