@@ -1,24 +1,43 @@
 <div class="example-container basic-align">
-    <mat-card>
+   <!--
+       https://stackoverflow.com/questions/59597088/submit-form-from-angular-dialog-template
+
+       https://stackblitz.com/edit/ang-material-dialog-watw58?file=src%2Fapp%2Fapp.component.html
+   -->
+    <form (ngSubmit)="onSubmit(model)" #templateForm="ngForm">
         <mat-form-field appearance="fill" >
             <mat-label>Name</mat-label>
-            <input matInput required minlength="4" >
-            <div>
+            <input matInput required minlength="2" [(ngModel)]="model.name" name="validate" #name="ngModel" [pattern]="userNamePattern">
+            <mat-error>
              Please enter a name (A-Z)
-            </div>
+            </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
-            <mat-label>Select</mat-label>
-            <mat-select>
-                <mat-option value="option">Option</mat-option>
-            </mat-select>
+            <mat-label>Email</mat-label>
+       <input matInput required [(ngModel)]="model.myEmail" #myEmail="ngModel" name="myEmail" [pattern]="emailPattern">
+       <mat-error>
+           A valid email is required
+       </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
-            <mat-label>Textarea</mat-label>
-            <textarea matInput></textarea>
-            <!-- <button type="submit" class="button" [disabled]="!templateForm.form.valid">Submit</button> -->
+            <mat-label>Occupation</mat-label>
+        <select matNativeControl required [(ngModel)]="model.myJobs" name="myJobs" #myJobs="ngModel" >
+            <option value="" disabled selected hidden>Occupation?</option>
+            <option *ngFor="let jb of jobs" [value]="jb">{{jb}}</option>       
+        </select>
+        <mat-error [hidden]="myJobs.valid || myJobs.pristine">
+            Please choose!
+        </mat-error>
         </mat-form-field>
-    </mat-card>
+       
+        
+        
+           <div>
+           <button type="submit" mat-button class="button" [disabled]="!templateForm.form.valid">Submit</button>
+           </div>
+
+    
+    </form>
 </div>
