@@ -12,3 +12,9 @@ body {
     Width:50%;
     margin:0 25% 0 25%;
 }
+/* mat-form-field-infix {
+  width: 480px;
+} */
+mat-form-field {
+  width: 80%;
+  }
