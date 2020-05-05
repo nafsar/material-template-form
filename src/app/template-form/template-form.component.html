@@ -1,61 +1,65 @@
 <div class="example-container basic-align">
+ 
+    <div [hidden]="submitted">
+        
+        <form (ngSubmit)="onSubmit(model)" #templateForm="ngForm">
+            <mat-card>
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput required minlength="2" [(ngModel)]="model.name" name="validate" #name="ngModel"
+                    [pattern]="userNamePattern">
+                <mat-error>
+                    Please enter a name minimum 2 characters (A-Z)
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput required [(ngModel)]="model.myEmail" #myEmail="ngModel" name="myEmail"
+                    [pattern]="emailPattern">
+                <mat-error>
+                    A valid email is required
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Occupation</mat-label>
+                <select matNativeControl required [(ngModel)]="model.myJobs" name="myJobs" #myJobs="ngModel">
+                    <option value="" disabled selected hidden>Occupation?</option>
+                    <option *ngFor="let jb of jobs" [value]="jb">{{jb}}</option>
+                </select>
+                <mat-error [hidden]="myJobs.valid || myJobs.pristine">
+                    Please choose!
+                </mat-error>
+            </mat-form-field>
 
-   <div [hidden]="submitted">
-    <form (ngSubmit)="onSubmit(model)" #templateForm="ngForm">
-        <mat-form-field appearance="fill" >
-            <mat-label>Name</mat-label>
-            <input matInput required minlength="2" [(ngModel)]="model.name" name="validate" #name="ngModel" [pattern]="userNamePattern">
-            <mat-error>
-             Please enter a name (A-Z)
-            </mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-       <input matInput required [(ngModel)]="model.myEmail" #myEmail="ngModel" name="myEmail" [pattern]="emailPattern">
-       <mat-error>
-           A valid email is required
-       </mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Occupation</mat-label>
-        <select matNativeControl required [(ngModel)]="model.myJobs" name="myJobs" #myJobs="ngModel" >
-            <option value="" disabled selected hidden>Occupation?</option>
-            <option *ngFor="let jb of jobs" [value]="jb">{{jb}}</option>       
-        </select>
-        <mat-error [hidden]="myJobs.valid || myJobs.pristine">
-            Please choose!
-        </mat-error>
-        </mat-form-field>
        
-        
-        
-           <div>
-           <button type="submit" mat-button class="button" [disabled]="!templateForm.form.valid">Submit</button>
-           </div>
 
-    
-    </form>
-</div>
+            <div>
+                <button type="submit" mat-button class="button" [disabled]="!templateForm.form.valid">Submit</button>
+            </div>
 
-<div *ngIf="submitted">
-    <div class="container">
-      <div class="sim-server">
-        <div class="ang-form">
-          <span class="angular"></span>
-          <span class="ang-text">Template Driven Forms</span>
-        </div>
-        <div class="sim-lnk">
-          <strong>Mocking server</strong>
-        </div>
-        <p>
-          <span class="font-weight-bold">Name: </span>{{titleRes}}</p>
-        <p>
-          <span class="font-weight-bold">Message: </span>{{textRes}}</p>
-        <div>
-          <span class="font-weight-bold">Occupation: </span> {{jobRes}}</div>
-          <button class="sim-lnk" (click)="refresh()">Back to form</button>
-      </div>
+        </mat-card>
+        </form>
     </div>
+
+    <div *ngIf="submitted">
+        <div class="container">
+            <div class="sim-server">
+                <div class="ang-form">
+                    <span class="angular"></span>
+                    <span class="ang-text">Template Driven Forms</span>
+                </div>
+                <div class="sim-lnk">
+                    <strong>Mocking server</strong>
+                </div>
+                <p>
+                    <span class="font-weight-bold">Name: </span>{{titleRes}}</p>
+                <p>
+                    <span class="font-weight-bold">Message: </span>{{textRes}}</p>
+                <div>
+                    <span class="font-weight-bold">Occupation: </span> {{jobRes}}</div>
+                <button class="sim-lnk" (click)="refresh()">Back to form</button>
+            </div>
+        </div>
     </div>
