@@ -18,3 +18,10 @@ body {
 mat-form-field {
   width: 100%;
   }
+  .fmt-result {
+    font-weight: bolder;
+    padding:5px;
+  }
+  mat-grid-tile {
+    background: lightgray;
+  }
