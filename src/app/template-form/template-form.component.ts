@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -19,9 +19,7 @@ export class TemplateFormComponent implements OnInit {
   text = 'Message';
   jobRes = ''; titleRes = ''; textRes = ''; 
   model = new Data('', this.jobs[0], '');
-
-
-
+  
   myname = new FormControl('', [Validators.required, Validators.min(4), Validators.pattern('[a-zA-Z]*')])
 
   onSubmit(result) {

@@ -2,17 +2,18 @@
 
     <div [hidden]="submitted">
 
-        <form (ngSubmit)="onSubmit(model)" #templateForm="ngForm">
+        <form (ngSubmit)="onSubmit(model)" #templateForm="ngForm" domDirective>
             <mat-card>
                 <mat-form-field appearance="fill">
                     <mat-label>Name</mat-label>
-                    <input matInput required minlength="2" [(ngModel)]="model.name" name="validate" #name="ngModel"
-                        [pattern]="userNamePattern">
+                    <input matInput required minlength="2" [(ngModel)]="model.name" name="name" #name="ngModel"
+                        [pattern]="userNamePattern" >
                     <mat-error>
                         Please enter a name minimum 2 characters (A-Z)
                     </mat-error>
                 </mat-form-field>
                 <br>
+                
                 <mat-form-field appearance="fill">
                     <mat-label>Email</mat-label>
                     <input matInput required [(ngModel)]="model.myEmail" #myEmail="ngModel" name="myEmail"
