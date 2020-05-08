@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TemplateFormComponent} from './template-form/template-form.component';
-import { domDirective } from './template-form/template-directive.component';
+import { DomDirective } from './template-form/template-directive.component';
 import { AppMaterialModule } from './material/app.material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -11,7 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     TemplateFormComponent,
-    domDirective
+    DomDirective
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@ import { HostListener, Directive } from '@angular/core';
 @Directive({
     selector: "[domDirective]"
   })
-  export class domDirective {
+  export class DomDirective {
     constructor() {}
   
     @HostListener('keydown.enter') onKeydownEnter() {
