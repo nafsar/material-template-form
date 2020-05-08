@@ -25,3 +25,8 @@ mat-form-field {
   mat-grid-tile {
     background: lightgray;
   }
+  .sim-lnk {
+    margin: 20px;
+    text-decoration: none;
+    padding: 20px;
+}

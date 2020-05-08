@@ -17,7 +17,7 @@ export class TemplateFormComponent implements OnInit {
   title = 'name';
   emailAddress = 'Email Address';
   text = 'Message';
-  jobRes = ''; titleRes = ''; textRes = ''; myAccept: boolean;
+  jobRes = ''; titleRes = ''; textRes = ''; 
   model = new Data('', this.jobs[0], '');
 
 
@@ -28,7 +28,6 @@ export class TemplateFormComponent implements OnInit {
     this.titleRes = result.name;
     this.jobRes = result.myJobs;
     this.textRes = result.myEmail;
-    this.myAccept = result.myTerm;
     this.submitted = true;
   }
 
@@ -46,7 +45,6 @@ export class Data {
     public name?: string,
     public myJobs?: string,
     public myEmail?: string,
-    public myTerm?: boolean,
   ) { }
 
 }

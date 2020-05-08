@@ -1,9 +1,5 @@
 <div class="example-container basic-align">
-    <!--
-       https://stackoverflow.com/questions/59597088/submit-form-from-angular-dialog-template
 
-       https://stackblitz.com/edit/ang-material-dialog-watw58?file=src%2Fapp%2Fapp.component.html
-   -->
     <div [hidden]="submitted">
 
         <form (ngSubmit)="onSubmit(model)" #templateForm="ngForm">
@@ -37,9 +33,6 @@
                     </mat-error>
                 </mat-form-field>
 
-                <mat-checkbox type="checkbox" required [(ngModel)]="model.myTerm" name="myTerm" #myTerm="ngModel" color="primary">
-                    <!-- <input type="checkbox" required [(ngModel)]="model.myTerm" name="myTerm" #myTerm="ngModel"> -->
-                    I accept Terms of service</mat-checkbox>
 
                 <div>
                     <button type="submit" mat-button class="button"
@@ -63,14 +56,8 @@
                 <mat-grid-list cols="1" rowHeight="8:1">
                     <mat-grid-tile><span class="fmt-result">Name: </span>{{titleRes}}</mat-grid-tile>
                     <mat-grid-tile><span class="fmt-result">Email: </span>{{textRes}}</mat-grid-tile>
-                    <mat-grid-tile><span class="fmt-result">Term & condtion: </span>{{myAccept}}</mat-grid-tile>
                     <mat-grid-tile><span class="fmt-result">Occupation: </span> {{jobRes}}</mat-grid-tile> 
                   </mat-grid-list>
- <!--                <div><span class="fmt-result">Name: </span>{{titleRes}}</div>
-                <div><span class="fmt-result">Message: </span>{{textRes}}</div>
-                <div> <span class="fmt-result">Term condtion: </span>{{myAccept}}</div>
-                <div><span class="fmt-result">Occupation: </span> {{jobRes}}</div> -->
-
                 <button class="sim-lnk" (click)="refresh()">Back to form</button>
             </div>
         </div>
